@@ -3,7 +3,10 @@
 namespace Lexik\Bundle\MaintenanceBundle\Tests\EventListener;
 
 use Lexik\Bundle\MaintenanceBundle\Drivers\DriverFactory;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -311,7 +314,7 @@ class MaintenanceListenerTest extends TestCase
      * Get a mock DatabaseDriver
      *
      * @param boolean $lock
-     * @return \PHPUnit_Framework_MockObject_MockObject
+     * @return MockObject
      */
     protected function getDatabaseDriver($lock = false)
     {
@@ -333,7 +336,7 @@ class MaintenanceListenerTest extends TestCase
     /**
      * Get Translator
      *
-     * @return \Symfony\Bundle\FrameworkBundle\Translation\Translator
+     * @return MockObject&Translator
      */
     public function getTranslator()
     {
