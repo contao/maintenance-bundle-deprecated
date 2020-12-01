@@ -3,6 +3,7 @@
 namespace Lexik\Bundle\MaintenanceBundle\Tests\EventListener;
 
 use Lexik\Bundle\MaintenanceBundle\Drivers\DriverFactory;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * @package LexikMaintenanceBundle
  * @author  Gilles Gauthier <g.gauthier@lexik.fr>
  */
-class MaintenanceListenerTest extends \PHPUnit_Framework_TestCase
+class MaintenanceListenerTest extends TestCase
 {
     protected
         $container,
@@ -281,7 +282,7 @@ class MaintenanceListenerTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->container = null;
         $this->factory   = null;
