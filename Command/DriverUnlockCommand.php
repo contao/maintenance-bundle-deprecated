@@ -46,7 +46,7 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if (!$this->confirmUnlock($input, $output)) {
-            return Command::FAILURE;
+            return 1;
         }
 
         $driver = $this->driverFactory->getDriver();
@@ -55,7 +55,7 @@ EOT
 
         $output->writeln('<info>'.$unlockMessage.'</info>');
 
-        return Command::SUCCESS;
+        return 0;
     }
 
     /**
